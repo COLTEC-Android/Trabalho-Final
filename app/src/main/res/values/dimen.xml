@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimens_txt_btn_main">40sp</dimen>
+    <dimen name="dimens_txt_list_title">25sp</dimen>
+    <dimen name="dimens_txt_book_details">20sp</dimen>
+</resources>

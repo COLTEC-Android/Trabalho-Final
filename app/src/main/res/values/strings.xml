@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">TrabalhoFinal</string>
+    <string name="string_txt_btn_main">Entrar</string>
+    <string name="string_txt_books_list">Lista de livros</string>
+    <string name="string_txt_favorite_books_list">Favoritos</string>
 </resources>

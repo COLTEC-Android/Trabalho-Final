@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/string_txt_books_list"
+            android:textSize="@dimen/dimens_txt_list_title" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/frag_books_list"
+            class="br.ufmg.coltec.trabalhofinal.BooksListFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/fragment_books_list" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/string_txt_favorite_books_list"
+            android:textSize="@dimen/dimens_txt_list_title" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/frag_favorite_books_list"
+            class="br.ufmg.coltec.trabalhofinal.FavoriteBooksListFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            tools:layout="@layout/fragment_books_list" />
+    </LinearLayout>
+
+
+</LinearLayout>
