@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="slogan">Your training app!</string>
+    <string name="app_name">Calisthenics</string>
+    <string name="login">Sign In</string>
+    <string name="register">Sign Up</string>
+    <string name="name_lbl">Name</string>
+    <string name="email_lbl">Email</string>
+    <string name="password_lbl">Password</string>
+    <string name="existing_email">Email already exists</string>
+    <string name="invalid_login">Invalid email or password</string>
+    <string name="invalid_register">Register failed!</string>
+    <string name="set_theme">Change theme</string>
+    <string name="like">Like!</string>
+    <string name="dislike">Dislike...</string>
+</resources>

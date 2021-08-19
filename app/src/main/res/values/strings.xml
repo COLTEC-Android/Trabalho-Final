@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">TrabalhoFinal</string>
+    <string name="slogan">Seu app de treino!</string>
+    <string name="app_name">Calistenia</string>
+    <string name="login">Entrar</string>
+    <string name="register">Cadastrar</string>
+    <string name="name_lbl">Nome</string>
+    <string name="email_lbl">Email</string>
+    <string name="password_lbl">Senha</string>
+    <string name="existing_email">Email já cadastrado.</string>
+    <string name="invalid_login">Usuário e/ou senha inválido(s)</string>
+    <string name="invalid_register">Erro ao cadastrar!</string>
+    <string name="set_theme">Mudar tema</string>
+    <string name="like">Favoritado!</string>
+    <string name="dislike">Favorito removido...</string>
 </resources>
