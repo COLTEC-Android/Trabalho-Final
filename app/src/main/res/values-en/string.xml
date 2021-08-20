@@ -13,4 +13,5 @@
     <string name="set_theme">Change theme</string>
     <string name="like">Like!</string>
     <string name="dislike">Dislike...</string>
+    <string name="favorite">Favorites</string>
 </resources>

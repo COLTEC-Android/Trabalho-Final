@@ -95,4 +95,19 @@ public class ExerciseDAO {
         }
         return exercise;
     }
+
+    public List<Exercise> getSpecificList(List<String> exerciseName){
+        List<Exercise> exerciseList = new ArrayList<>();
+
+        for(Exercise e : getAll()){
+           for(String name : exerciseName){
+               if(e.getName().equals(name)){
+                   exerciseList.add(e);
+                   Log.d("SPECIFIC_LIST", e.getName());
+               }
+           }
+        }
+
+        return exerciseList;
+    }
 }

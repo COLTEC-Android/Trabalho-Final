@@ -89,4 +89,17 @@ public class FavoriteDAO {
 
         return favoriteList;
     }
+
+    public List<String> getByUser(String id){
+        List<String> exerciseList = new ArrayList<>();
+
+        for(Favorite f : getAll()){
+            if(f.getIdUser().equals(id)){
+                Log.d("USER_FAV", f.getIdExercise());
+                exerciseList.add(f.getIdExercise());
+            }
+        }
+
+        return exerciseList;
+    }
 }

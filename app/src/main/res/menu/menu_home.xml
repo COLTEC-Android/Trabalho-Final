@@ -7,4 +7,8 @@
         android:icon="@drawable/ic_baseline_brightness_medium_24"
         android:title="@string/set_theme"
         app:showAsAction="always" />
+    <item
+        android:id="@+id/fav"
+        android:title="@string/favorite"
+        app:showAsAction="never" />
 </menu>

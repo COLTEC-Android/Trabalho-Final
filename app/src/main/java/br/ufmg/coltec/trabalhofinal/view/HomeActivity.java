@@ -56,6 +56,10 @@ public class HomeActivity extends AppCompatActivity {
                     switchActivityTheme(R.style.Theme_TrabalhoFinal);
                 }
                 return  true;
+            case R.id.fav:
+                Intent favoriteActivity = new Intent(HomeActivity.this, FavoritesActivity.class);
+                favoriteActivity.putExtra("userId", email);
+                startActivity(favoriteActivity);
             default:
                 return super.onOptionsItemSelected(item);
         }

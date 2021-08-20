@@ -12,4 +12,5 @@
     <string name="set_theme">Mudar tema</string>
     <string name="like">Favoritado!</string>
     <string name="dislike">Favorito removido...</string>
+    <string name="favorite">Favoritos</string>
 </resources>
