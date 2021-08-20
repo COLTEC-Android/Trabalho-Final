@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrabalhoFinal">
         <activity
+            android:name=".controller.InsertDataActivity"
+            android:exported="true" />
+        <activity
             android:name=".view.ListViewItemActivity"
             android:exported="true" />
         <activity

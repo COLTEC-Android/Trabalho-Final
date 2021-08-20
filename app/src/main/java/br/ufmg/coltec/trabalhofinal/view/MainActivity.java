@@ -7,11 +7,13 @@ import android.os.Bundle;
 import android.widget.Button;
 import br.ufmg.coltec.trabalhofinal.R;
 import br.ufmg.coltec.trabalhofinal.controller.ApplicationDB;
+import br.ufmg.coltec.trabalhofinal.controller.InsertDataActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button btnLogin;
     private Button btnRegister;
+    private Button banco;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,5 +35,14 @@ public class MainActivity extends AppCompatActivity {
             Intent registerActivity = new Intent(MainActivity.this, RegisterActivity.class);
             startActivity(registerActivity);
         });
+
+        banco = findViewById(R.id.admin);
+        banco = findViewById(R.id.admin);
+        banco.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, InsertDataActivity.class);
+            startActivity(intent);
+        });
     }
+
+
 }
