@@ -1,35 +1,36 @@
 package br.ufmg.coltec.trabalhofinal;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.fragment.app.ListFragment;
+import androidx.lifecycle.ViewModelProvider;
 
-import com.github.javafaker.Faker;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BooksListFragment extends ListFragment {
 
-    private Book[] books = createFakerBooksList();
+    private SharedBookViewModel bookModel;
+    private List<Book> books = new ArrayList<>();
 
-    public Book[] createFakerBooksList() {
-        Faker faker = new Faker();
-        Book[] books1 = new Book[50];
-        for (int i = 0; i < 50; i++) {
-            books1[i] = new Book(R.drawable.ic_launcher_background, faker.book().title(), faker.book().author(), faker.book().genre(), faker.book().publisher());
-        }
-        return books1;
+    public BooksListFragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_books_list, container, false);
 
-        BookAdapter bookAdapter = new BookAdapter(books, this.getActivity());
+        BookAdapter bookAdapter = new BookAdapter(getContext(), books);
         setListAdapter(bookAdapter);
 
         return view;
@@ -37,15 +38,56 @@ public class BooksListFragment extends ListFragment {
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
-        Book selectedBook = this.books[position];
+
+        Book selectedBook = this.books.get(position);
 
         Intent intent = new Intent(this.getActivity(), BookDetailsActivity.class);
         intent.putExtra("book", selectedBook);
         startActivity(intent);
-        
+
+        getListView().setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                Book selectedBook = books.get(position);
+                Log.v("long clicked", "pos: " + position);
+
+                AlertDialog.Builder alertBuilder = new AlertDialog.Builder(getContext());
+
+                alertBuilder.setIcon(R.drawable.ic_launcher_foreground);
+                alertBuilder.setTitle(R.string.string_dialog_title);
+                alertBuilder.setMessage(R.string.string_dialog_message);
+
+                alertBuilder.setNegativeButton(R.string.string_dialog_btn_negative, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getContext(), R.string.string_dialog_negative, Toast.LENGTH_LONG).show();
+                    }
+                });
+
+                alertBuilder.setPositiveButton(R.string.string_dialog_btn_positive, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        bookModel = new ViewModelProvider(requireActivity()).get(SharedBookViewModel.class);
+                        bookModel.setText(selectedBook);
+                    }
+                });
+                AlertDialog dialog = alertBuilder.create();
+                dialog.show();
+                return true;
+            }
+        });
+
         super.onListItemClick(l, v, position, id);
     }
 
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
 }
 
 

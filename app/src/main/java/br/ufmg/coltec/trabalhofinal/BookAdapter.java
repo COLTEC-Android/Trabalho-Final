@@ -6,24 +6,26 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.util.List;
+
 public class BookAdapter extends BaseAdapter {
 
-    private Book[] books;
+    private List<Book> books;
     private Context context;
 
-    public BookAdapter(Book[] books, Context context) {
+    public BookAdapter(Context context, List<Book> books) {
         this.books = books;
         this.context = context;
     }
 
     @Override
     public int getCount() {
-        return this.books.length;
+        return this.books.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return this.books[position];
+        return this.books.get(position);
     }
 
     @Override
@@ -33,7 +35,7 @@ public class BookAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Book book = this.books[position];
+        Book book = this.books.get(position);
 
         TextView txtNome = new TextView(this.context);
         txtNome.setText(book.getTitle());
