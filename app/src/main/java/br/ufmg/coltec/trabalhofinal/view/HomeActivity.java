@@ -60,6 +60,11 @@ public class HomeActivity extends AppCompatActivity {
                 Intent favoriteActivity = new Intent(HomeActivity.this, FavoritesActivity.class);
                 favoriteActivity.putExtra("userId", email);
                 startActivity(favoriteActivity);
+                return  true;
+            case R.id.users_list:
+                Intent usersActivity = new Intent(HomeActivity.this, ListViewUsersActivity.class);
+                startActivity(usersActivity);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

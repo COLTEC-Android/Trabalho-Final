@@ -13,4 +13,5 @@
     <string name="like">Favoritado!</string>
     <string name="dislike">Favorito removido...</string>
     <string name="favorite">Favoritos</string>
+    <string name="users_list">Comunidade</string>
 </resources>

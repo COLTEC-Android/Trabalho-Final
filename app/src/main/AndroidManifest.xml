@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrabalhoFinal">
         <activity
+            android:name=".models.adapter.UserAdapterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.ListViewUsersActivity"
+            android:exported="true" />
+        <activity
             android:name=".view.FavoritesActivity"
             android:exported="true" />
         <activity

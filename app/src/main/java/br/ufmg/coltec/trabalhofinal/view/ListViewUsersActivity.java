@@ -8,36 +8,41 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-
-import java.util.ArrayList;
-import java.util.List;
+import android.widget.TextView;
 
 import br.ufmg.coltec.trabalhofinal.R;
 import br.ufmg.coltec.trabalhofinal.controller.ApplicationDB;
-import br.ufmg.coltec.trabalhofinal.controller.dao.ExerciseDAO;
-import br.ufmg.coltec.trabalhofinal.controller.dao.FavoriteDAO;
+import br.ufmg.coltec.trabalhofinal.controller.dao.UserDAO;
 import br.ufmg.coltec.trabalhofinal.models.Exercise;
 import br.ufmg.coltec.trabalhofinal.models.adapter.ExerciseAdapter;
+import br.ufmg.coltec.trabalhofinal.models.adapter.UserAdapter;
 
-public class FavoritesActivity extends AppCompatActivity {
+public class ListViewUsersActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_favorites);
+        setContentView(R.layout.activity_list_view_users);
+
         setListView();
     }
 
     private void setListView(){
-        FavoriteDAO favoriteDAO = new FavoriteDAO(ApplicationDB.getInstance(this));
-        ExerciseDAO exerciseDAO = new ExerciseDAO(ApplicationDB.getInstance(this));
-        List<Exercise> exerciseList = exerciseDAO.getSpecificList(favoriteDAO.getByUser(getIntent().getStringExtra("userId")));
-        ListView listView = findViewById(R.id.list_view_favorites);
-        listView.setAdapter(new ExerciseAdapter(this, exerciseList));
+        UserDAO userDAO = new UserDAO(ApplicationDB.getInstance(this));
+
+        ListView listView;
+        listView = findViewById(R.id.list_view_users);
+        listView.setAdapter(new UserAdapter(this, userDAO.getAll()));
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.d("LIST_VIEW_ON_CLICK", "item "+position);
+
+                String userId = userDAO.getAll().get(position).getEmail();
+                Log.d("userID", userId);
+                Intent favoriteActivity = new Intent(ListViewUsersActivity.this, FavoritesActivity.class);
+                favoriteActivity.putExtra("userId", userId);
+                startActivity(favoriteActivity);
             }
         });
     }

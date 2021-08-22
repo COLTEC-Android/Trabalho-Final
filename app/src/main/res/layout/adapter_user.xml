@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name_lbl"
+        android:id="@+id/adapter_user_name"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/adapter_user_name_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/adapter_user_name"
+        android:text=" : "
+        android:textSize="20dp" />
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/adapter_user_email"
+        android:text="@string/email_lbl"
+        android:textSize="20dp"
+        android:layout_below="@+id/adapter_user_name" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" : "
+        android:textSize="20dp"
+        android:layout_alignBottom="@+id/adapter_user_email"
+        android:layout_toRightOf="@id/adapter_user_email"
+        android:id="@+id/adapter_user_email_in" />
+
+
+</RelativeLayout>
