@@ -1,4 +1,4 @@
-package br.ufmg.coltec.trabalhofinal.view;
+package br.ufmg.coltec.trabalhofinal.interfaces;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,9 +9,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import br.ufmg.coltec.trabalhofinal.R;
-import br.ufmg.coltec.trabalhofinal.controller.ApplicationDB;
-import br.ufmg.coltec.trabalhofinal.models.User;
-import br.ufmg.coltec.trabalhofinal.controller.dao.UserDAO;
+import br.ufmg.coltec.trabalhofinal.data.ApplicationDB;
+import br.ufmg.coltec.trabalhofinal.data.entities.User;
+import br.ufmg.coltec.trabalhofinal.data.dao.UserDAO;
 
 public class RegisterActivity extends AppCompatActivity {
     private ApplicationDB applicationDB;

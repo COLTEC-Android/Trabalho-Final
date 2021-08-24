@@ -1,17 +1,15 @@
-package br.ufmg.coltec.trabalhofinal.controller.dao;
+package br.ufmg.coltec.trabalhofinal.data.dao;
 
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import br.ufmg.coltec.trabalhofinal.models.Exercise;
+import br.ufmg.coltec.trabalhofinal.data.entities.Exercise;
 
 public class ExerciseDAO {
     private static final String TABLE_NAME = "exercise";

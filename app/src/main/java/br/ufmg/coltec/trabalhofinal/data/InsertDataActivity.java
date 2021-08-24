@@ -1,4 +1,4 @@
-package br.ufmg.coltec.trabalhofinal.controller;
+package br.ufmg.coltec.trabalhofinal.data;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,8 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufmg.coltec.trabalhofinal.R;
-import br.ufmg.coltec.trabalhofinal.controller.dao.ExerciseDAO;
-import br.ufmg.coltec.trabalhofinal.models.Exercise;
+import br.ufmg.coltec.trabalhofinal.data.dao.ExerciseDAO;
+import br.ufmg.coltec.trabalhofinal.data.entities.Exercise;
 
 public class InsertDataActivity extends AppCompatActivity {
 

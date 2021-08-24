@@ -1,19 +1,17 @@
-package br.ufmg.coltec.trabalhofinal.models.adapter;
+package br.ufmg.coltec.trabalhofinal.business.adapter;
 
 import android.content.Context;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import br.ufmg.coltec.trabalhofinal.R;
-import br.ufmg.coltec.trabalhofinal.models.User;
+import br.ufmg.coltec.trabalhofinal.data.entities.User;
 
 public class UserAdapter extends BaseAdapter {
 

@@ -1,4 +1,4 @@
-package br.ufmg.coltec.trabalhofinal.controller.dao;
+package br.ufmg.coltec.trabalhofinal.data.dao;
 
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -9,8 +9,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.ufmg.coltec.trabalhofinal.models.Favorite;
-import br.ufmg.coltec.trabalhofinal.models.User;
+import br.ufmg.coltec.trabalhofinal.data.entities.User;
 
 
 public class UserDAO {

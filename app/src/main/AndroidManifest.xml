@@ -10,30 +10,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrabalhoFinal">
         <activity
-            android:name=".models.adapter.UserAdapterActivity"
+            android:name=".business.adapter.UserAdapterActivity"
             android:exported="true" />
         <activity
-            android:name=".view.ListViewUsersActivity"
+            android:name=".interfaces.ListViewUsersActivity"
             android:exported="true" />
         <activity
-            android:name=".view.FavoritesActivity"
+            android:name=".interfaces.FavoritesActivity"
             android:exported="true" />
         <activity
-            android:name=".controller.InsertDataActivity"
+            android:name=".data.InsertDataActivity"
             android:exported="true" />
         <activity
-            android:name=".view.ListViewItemActivity"
+            android:name=".interfaces.ListViewItemActivity"
             android:exported="true" />
         <activity
-            android:name=".view.RegisterActivity"
+            android:name=".interfaces.RegisterActivity"
             android:exported="true" />
         <activity
-            android:name=".view.HomeActivity"
+            android:name=".interfaces.HomeActivity"
             android:exported="true" />
         <activity
-            android:name=".view.LoginActivity"
+            android:name=".interfaces.LoginActivity"
             android:exported="true" />
-        <activity android:name=".view.MainActivity">
+        <activity android:name=".interfaces.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

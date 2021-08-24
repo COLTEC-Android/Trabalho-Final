@@ -1,6 +1,4 @@
-package br.ufmg.coltec.trabalhofinal.models;
-
-import android.graphics.Bitmap;
+package br.ufmg.coltec.trabalhofinal.data.entities;
 
 import java.util.ArrayList;
 import java.util.List;

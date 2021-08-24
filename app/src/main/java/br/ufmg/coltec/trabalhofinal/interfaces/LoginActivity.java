@@ -1,10 +1,10 @@
-package br.ufmg.coltec.trabalhofinal.view;
+package br.ufmg.coltec.trabalhofinal.interfaces;
 
 import androidx.appcompat.app.AppCompatActivity;
 import br.ufmg.coltec.trabalhofinal.R;
-import br.ufmg.coltec.trabalhofinal.controller.ApplicationDB;
-import br.ufmg.coltec.trabalhofinal.models.User;
-import br.ufmg.coltec.trabalhofinal.controller.dao.UserDAO;
+import br.ufmg.coltec.trabalhofinal.data.ApplicationDB;
+import br.ufmg.coltec.trabalhofinal.data.entities.User;
+import br.ufmg.coltec.trabalhofinal.data.dao.UserDAO;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -1,23 +1,21 @@
-package br.ufmg.coltec.trabalhofinal.view;
+package br.ufmg.coltec.trabalhofinal.interfaces;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import br.ufmg.coltec.trabalhofinal.R;
-import br.ufmg.coltec.trabalhofinal.controller.ApplicationDB;
-import br.ufmg.coltec.trabalhofinal.controller.dao.ExerciseDAO;
-import br.ufmg.coltec.trabalhofinal.controller.dao.FavoriteDAO;
-import br.ufmg.coltec.trabalhofinal.models.Exercise;
-import br.ufmg.coltec.trabalhofinal.models.adapter.ExerciseAdapter;
+import br.ufmg.coltec.trabalhofinal.data.ApplicationDB;
+import br.ufmg.coltec.trabalhofinal.data.dao.ExerciseDAO;
+import br.ufmg.coltec.trabalhofinal.data.dao.FavoriteDAO;
+import br.ufmg.coltec.trabalhofinal.data.entities.Exercise;
+import br.ufmg.coltec.trabalhofinal.business.adapter.ExerciseAdapter;
 
 public class FavoritesActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package br.ufmg.coltec.trabalhofinal.view;
+package br.ufmg.coltec.trabalhofinal.interfaces;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,10 +12,10 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import br.ufmg.coltec.trabalhofinal.R;
-import br.ufmg.coltec.trabalhofinal.controller.ApplicationDB;
-import br.ufmg.coltec.trabalhofinal.controller.dao.ExerciseDAO;
-import br.ufmg.coltec.trabalhofinal.models.Exercise;
-import br.ufmg.coltec.trabalhofinal.models.adapter.ExerciseAdapter;
+import br.ufmg.coltec.trabalhofinal.data.ApplicationDB;
+import br.ufmg.coltec.trabalhofinal.data.dao.ExerciseDAO;
+import br.ufmg.coltec.trabalhofinal.data.entities.Exercise;
+import br.ufmg.coltec.trabalhofinal.business.adapter.ExerciseAdapter;
 
 public class HomeActivity extends AppCompatActivity {
     private static int CURRENT_THEME = R.style.Theme_TrabalhoFinal;

@@ -1,4 +1,4 @@
-package br.ufmg.coltec.trabalhofinal.models;
+package br.ufmg.coltec.trabalhofinal.data.entities;
 
 public class Favorite {
 

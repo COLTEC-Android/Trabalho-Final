@@ -1,4 +1,4 @@
-package br.ufmg.coltec.trabalhofinal.view;
+package br.ufmg.coltec.trabalhofinal.interfaces;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,14 +8,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import br.ufmg.coltec.trabalhofinal.R;
-import br.ufmg.coltec.trabalhofinal.controller.ApplicationDB;
-import br.ufmg.coltec.trabalhofinal.controller.dao.UserDAO;
-import br.ufmg.coltec.trabalhofinal.models.Exercise;
-import br.ufmg.coltec.trabalhofinal.models.adapter.ExerciseAdapter;
-import br.ufmg.coltec.trabalhofinal.models.adapter.UserAdapter;
+import br.ufmg.coltec.trabalhofinal.data.ApplicationDB;
+import br.ufmg.coltec.trabalhofinal.data.dao.UserDAO;
+import br.ufmg.coltec.trabalhofinal.business.adapter.UserAdapter;
 
 public class ListViewUsersActivity extends AppCompatActivity {
 

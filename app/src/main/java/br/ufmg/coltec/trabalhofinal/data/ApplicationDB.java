@@ -1,4 +1,4 @@
-package br.ufmg.coltec.trabalhofinal.controller;
+package br.ufmg.coltec.trabalhofinal.data;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -35,7 +35,7 @@ public class ApplicationDB extends SQLiteOpenHelper {
 
     public static ApplicationDB getInstance(Context context) {
         if (instance == null)
-            instance = new ApplicationDB(context); // 1a vez que chama-se getInstance
+            instance = new ApplicationDB(context);
         else if(!instance.getContext().equals(context))
             instance = new ApplicationDB(context);
         return instance;

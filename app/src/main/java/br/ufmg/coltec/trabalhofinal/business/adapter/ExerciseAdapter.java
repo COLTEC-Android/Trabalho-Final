@@ -1,7 +1,6 @@
-package br.ufmg.coltec.trabalhofinal.models.adapter;
+package br.ufmg.coltec.trabalhofinal.business.adapter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufmg.coltec.trabalhofinal.R;
-import br.ufmg.coltec.trabalhofinal.models.Exercise;
+import br.ufmg.coltec.trabalhofinal.data.entities.Exercise;
 
 public class ExerciseAdapter extends BaseAdapter {
     private ArrayList<Exercise> exercises;
