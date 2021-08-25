@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import br.ufmg.coltec.trabalhofinal.R;
@@ -20,6 +22,13 @@ public class RegisterActivity extends AppCompatActivity {
     EditText email;
     EditText password;
     Button btnRegister;
+    ProgressBar progressBar;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        progressBar.setVisibility(View.INVISIBLE);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +36,8 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         applicationDB = ApplicationDB.getInstance(this);
         userDAO = new UserDAO(applicationDB);
+        progressBar = findViewById(R.id.progress_bar_register);
+        progressBar.setVisibility(View.INVISIBLE);
         setEditTexts();
         setButtons();
     }
@@ -44,7 +55,17 @@ public class RegisterActivity extends AppCompatActivity {
                 User newUser = new User(name.getText().toString(),
                         email.getText().toString(),
                         password.getText().toString());
-                userDAO.insert(newUser);
+                Thread thread = new Thread() {
+                    public void run() {
+                        runOnUiThread(new Runnable() {
+                            public void run() {
+                                progressBar.setVisibility(View.VISIBLE);
+                            }
+                        });
+                        userDAO.insert(newUser);
+                    }
+                };
+                thread.start();
                 Intent homeActivity = new Intent(RegisterActivity.this, HomeActivity.class);
                 homeActivity.putExtra("email", newUser.getEmail());
                 startActivity(homeActivity);
