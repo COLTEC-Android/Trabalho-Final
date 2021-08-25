@@ -6,13 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import br.ufmg.coltec.trabalhofinal.R;
-import br.ufmg.coltec.trabalhofinal.data.InsertDataActivity;
+import br.ufmg.coltec.trabalhofinal.data.ApplicationDB;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button btnLogin;
     private Button btnRegister;
-    private Button banco;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +32,6 @@ public class MainActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(view -> {
             Intent registerActivity = new Intent(MainActivity.this, RegisterActivity.class);
             startActivity(registerActivity);
-        });
-
-        banco = findViewById(R.id.admin);
-        banco = findViewById(R.id.admin);
-        banco.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, InsertDataActivity.class);
-            startActivity(intent);
         });
     }
 

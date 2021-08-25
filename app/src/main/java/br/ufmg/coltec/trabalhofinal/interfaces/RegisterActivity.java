@@ -27,7 +27,6 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         applicationDB = ApplicationDB.getInstance(this);
         userDAO = new UserDAO(applicationDB);
-        userDAO.getAll();
         setEditTexts();
         setButtons();
     }

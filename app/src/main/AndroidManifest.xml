@@ -19,9 +19,6 @@
             android:name=".interfaces.FavoritesActivity"
             android:exported="true" />
         <activity
-            android:name=".data.InsertDataActivity"
-            android:exported="true" />
-        <activity
             android:name=".interfaces.ListViewItemActivity"
             android:exported="true" />
         <activity
