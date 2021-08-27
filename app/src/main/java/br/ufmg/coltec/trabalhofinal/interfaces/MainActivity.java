@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import br.ufmg.coltec.trabalhofinal.R;
-import br.ufmg.coltec.trabalhofinal.data.ApplicationDB;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufmg.coltec.trabalhofinal.R;
-import br.ufmg.coltec.trabalhofinal.data.entities.User;
+import br.ufmg.coltec.data.entities.User;
 
 public class UserAdapter extends BaseAdapter {
 

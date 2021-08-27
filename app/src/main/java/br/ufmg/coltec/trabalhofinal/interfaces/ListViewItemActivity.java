@@ -1,12 +1,13 @@
 package br.ufmg.coltec.trabalhofinal.interfaces;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import br.ufmg.coltec.data.ApplicationDB;
 import br.ufmg.coltec.trabalhofinal.R;
-import br.ufmg.coltec.trabalhofinal.data.ApplicationDB;
-import br.ufmg.coltec.trabalhofinal.data.dao.ExerciseDAO;
-import br.ufmg.coltec.trabalhofinal.data.dao.FavoriteDAO;
-import br.ufmg.coltec.trabalhofinal.data.entities.Exercise;
-import br.ufmg.coltec.trabalhofinal.data.entities.Favorite;
+import br.ufmg.coltec.data.dao.ExerciseDAO;
+import br.ufmg.coltec.data.dao.FavoriteDAO;
+import br.ufmg.coltec.data.entities.Exercise;
+import br.ufmg.coltec.data.entities.Favorite;
 
 import android.graphics.BitmapFactory;
 import android.os.Bundle;

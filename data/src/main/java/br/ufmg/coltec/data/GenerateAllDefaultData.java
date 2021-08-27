@@ -1,16 +1,22 @@
-package br.ufmg.coltec.trabalhofinal.data;
+package br.ufmg.coltec.data;
 
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Environment;
+import android.os.StrictMode;
 import android.util.Log;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URI;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import br.ufmg.coltec.trabalhofinal.R;
-import br.ufmg.coltec.trabalhofinal.data.entities.Exercise;
+import br.ufmg.coltec.data.entities.Exercise;
 
 public class GenerateAllDefaultData {
 
@@ -34,8 +40,26 @@ public class GenerateAllDefaultData {
     }
 
     private void insertData(){
+        InputStream inputStream;
+        Bitmap bitmap;
+
+        if (android.os.Build.VERSION.SDK_INT > 8)
+        {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+        }
+
+        String id = "1cnvGa4FZx2ecmF9mVIEssGp_aGIu4pvu";
+        String stringUrl = "https://drive.google.com/uc?export=view&id=" + id;
+
+        try {
+            inputStream = new java.net.URL(stringUrl).openStream();
+            bitmap = BitmapFactory.decodeStream(inputStream);
+        } catch (IOException e) {
+            bitmap = null;
+        }
+
         //BENCH DIPS
-        Bitmap bitmap = BitmapFactory.decodeResource(applicationDB.getContext().getResources(), R.drawable.bench_dips);
         ByteArrayOutputStream byteArray = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArray);
         byte[] img = byteArray.toByteArray();
@@ -47,7 +71,16 @@ public class GenerateAllDefaultData {
         exerciseList.add(new Exercise(name, d, img, type));
 
         //BICYCLES
-        bitmap = BitmapFactory.decodeResource(applicationDB.getContext().getResources(), R.drawable.bicycle);
+        id = "17QwndQd2bPo07A4zg6K-EtjCx3QWgldW";
+        stringUrl = "https://drive.google.com/uc?export=view&id=" + id;
+
+        try {
+            inputStream = new java.net.URL(stringUrl).openStream();
+            bitmap = BitmapFactory.decodeStream(inputStream);
+        } catch (IOException e) {
+            bitmap = null;
+        }
+
         byteArray = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArray);
         img = byteArray.toByteArray();
@@ -58,7 +91,16 @@ public class GenerateAllDefaultData {
         exerciseList.add(new Exercise(name, d, img, type));
 
         //CALF RAISES
-        bitmap = BitmapFactory.decodeResource(applicationDB.getContext().getResources(), R.drawable.calf_raises);
+        id = "1c9AODxn9gdLI9gNCU-0f6QA3tlIN_KBe";
+        stringUrl = "https://drive.google.com/uc?export=view&id=" + id;
+
+        try {
+            inputStream = new java.net.URL(stringUrl).openStream();
+            bitmap = BitmapFactory.decodeStream(inputStream);
+        } catch (IOException e) {
+            bitmap = null;
+        }
+
         byteArray = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArray);
         img = byteArray.toByteArray();
@@ -68,7 +110,16 @@ public class GenerateAllDefaultData {
         exerciseList.add(new Exercise(name, d, img, type));
 
         //CHIN UPS
-        bitmap = BitmapFactory.decodeResource(this.applicationDB.getContext().getResources(), R.drawable.chin_ups);
+        id = "1BVHhNyD5GkNmxJpLro1C43su3q1MYE6R";
+        stringUrl = "https://drive.google.com/uc?export=view&id=" + id;
+
+        try {
+            inputStream = new java.net.URL(stringUrl).openStream();
+            bitmap = BitmapFactory.decodeStream(inputStream);
+        } catch (IOException e) {
+            bitmap = null;
+        }
+
         byteArray = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArray);
         img = byteArray.toByteArray();
@@ -78,7 +129,16 @@ public class GenerateAllDefaultData {
         exerciseList.add(new Exercise(name, d, img, type));
 
         //CRUNCH
-        bitmap = BitmapFactory.decodeResource(this.applicationDB.getContext().getResources(), R.drawable.crunch);
+        id = "1CyVmpouP8QaFAcAvoVbRjcyA1AWU-OyZ";
+        stringUrl = "https://drive.google.com/uc?export=view&id=" + id;
+
+        try {
+            inputStream = new java.net.URL(stringUrl).openStream();
+            bitmap = BitmapFactory.decodeStream(inputStream);
+        } catch (IOException e) {
+            bitmap = null;
+        }
+
         byteArray = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArray);
         img = byteArray.toByteArray();
@@ -88,7 +148,16 @@ public class GenerateAllDefaultData {
         exerciseList.add(new Exercise(name, d, img, type));
 
         //DIAMOND
-        bitmap = BitmapFactory.decodeResource(this.applicationDB.getContext().getResources(), R.drawable.diamond_pushups);
+        id = "1msOmwaawVKKDzhKMp9An39GUIvGMcuHz";
+        stringUrl = "https://drive.google.com/uc?export=view&id=" + id;
+
+        try {
+            inputStream = new java.net.URL(stringUrl).openStream();
+            bitmap = BitmapFactory.decodeStream(inputStream);
+        } catch (IOException e) {
+            bitmap = null;
+        }
+
         byteArray = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArray);
         img = byteArray.toByteArray();
@@ -99,7 +168,16 @@ public class GenerateAllDefaultData {
         exerciseList.add(new Exercise(name, d, img, type));
 
         //LUNGE
-        bitmap = BitmapFactory.decodeResource(this.applicationDB.getContext().getResources(), R.drawable.lunge);
+        id = "166TZ9NF4eVhAA-zmqnhoxTQCXIp1uLEv";
+        stringUrl = "https://drive.google.com/uc?export=view&id=" + id;
+
+        try {
+            inputStream = new java.net.URL(stringUrl).openStream();
+            bitmap = BitmapFactory.decodeStream(inputStream);
+        } catch (IOException e) {
+            bitmap = null;
+        }
+
         byteArray = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArray);
         img = byteArray.toByteArray();
@@ -109,7 +187,16 @@ public class GenerateAllDefaultData {
         exerciseList.add(new Exercise(name, d, img, type));
 
         //PLANK
-        bitmap = BitmapFactory.decodeResource(this.applicationDB.getContext().getResources(), R.drawable.plank);
+        id = "1Eb8E88BwD61U-MjQQLXNrGbBKtQAqbfR";
+        stringUrl = "https://drive.google.com/uc?export=view&id=" + id;
+
+        try {
+            inputStream = new java.net.URL(stringUrl).openStream();
+            bitmap = BitmapFactory.decodeStream(inputStream);
+        } catch (IOException e) {
+            bitmap = null;
+        }
+
         byteArray = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArray);
         img = byteArray.toByteArray();
@@ -119,7 +206,16 @@ public class GenerateAllDefaultData {
         exerciseList.add(new Exercise(name, d, img, type));
 
         //PULL UP
-        bitmap = BitmapFactory.decodeResource(this.applicationDB.getContext().getResources(), R.drawable.pullups);
+        id = "1Hdh-2TPXmoxS4zm5SwAT4kMOgnfZV4Ih";
+        stringUrl = "https://drive.google.com/uc?export=view&id=" + id;
+
+        try {
+            inputStream = new java.net.URL(stringUrl).openStream();
+            bitmap = BitmapFactory.decodeStream(inputStream);
+        } catch (IOException e) {
+            bitmap = null;
+        }
+
         byteArray = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArray);
         img = byteArray.toByteArray();
@@ -129,7 +225,16 @@ public class GenerateAllDefaultData {
         exerciseList.add(new Exercise(name, d, img, type));
 
         //PUSH UP
-        bitmap = BitmapFactory.decodeResource(this.applicationDB.getContext().getResources(), R.drawable.pushups);
+        id = "16BwK1Qo2W0rtU2RemZRa7c1qZ-5ca6jU";
+        stringUrl = "https://drive.google.com/uc?export=view&id=" + id;
+
+        try {
+            inputStream = new java.net.URL(stringUrl).openStream();
+            bitmap = BitmapFactory.decodeStream(inputStream);
+        } catch (IOException e) {
+            bitmap = null;
+        }
+
         byteArray = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArray);
         img = byteArray.toByteArray();
@@ -139,7 +244,16 @@ public class GenerateAllDefaultData {
         exerciseList.add(new Exercise(name, d, img, type));
 
         //SQUAT
-        bitmap = BitmapFactory.decodeResource(this.applicationDB.getContext().getResources(), R.drawable.squat);
+        id = "1ioAPRB-C6tKgWTtoilZeOhe1I94Vgwdn";
+        stringUrl = "https://drive.google.com/uc?export=view&id=" + id;
+
+        try {
+            inputStream = new java.net.URL(stringUrl).openStream();
+            bitmap = BitmapFactory.decodeStream(inputStream);
+        } catch (IOException e) {
+            bitmap = null;
+        }
+
         byteArray = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArray);
         img = byteArray.toByteArray();

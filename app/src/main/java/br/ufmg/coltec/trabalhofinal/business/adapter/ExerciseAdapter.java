@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufmg.coltec.trabalhofinal.R;
-import br.ufmg.coltec.trabalhofinal.data.entities.Exercise;
+import br.ufmg.coltec.data.entities.Exercise;
 
 public class ExerciseAdapter extends BaseAdapter {
     private ArrayList<Exercise> exercises;

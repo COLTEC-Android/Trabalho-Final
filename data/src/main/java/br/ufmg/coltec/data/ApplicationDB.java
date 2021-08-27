@@ -1,4 +1,4 @@
-package br.ufmg.coltec.trabalhofinal.data;
+package br.ufmg.coltec.data;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

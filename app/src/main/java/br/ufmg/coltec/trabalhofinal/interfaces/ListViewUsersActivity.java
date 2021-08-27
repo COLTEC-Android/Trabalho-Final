@@ -9,9 +9,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import br.ufmg.coltec.data.ApplicationDB;
 import br.ufmg.coltec.trabalhofinal.R;
-import br.ufmg.coltec.trabalhofinal.data.ApplicationDB;
-import br.ufmg.coltec.trabalhofinal.data.dao.UserDAO;
+import br.ufmg.coltec.data.dao.UserDAO;
 import br.ufmg.coltec.trabalhofinal.business.adapter.UserAdapter;
 
 public class ListViewUsersActivity extends AppCompatActivity {
@@ -34,7 +34,6 @@ public class ListViewUsersActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.d("LIST_VIEW_ON_CLICK", "item "+position);
-
                 String userId = userDAO.getAll().get(position).getEmail();
                 Log.d("userID", userId);
                 Intent favoriteActivity = new Intent(ListViewUsersActivity.this, FavoritesActivity.class);

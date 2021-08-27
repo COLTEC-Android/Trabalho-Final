@@ -10,10 +10,10 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import br.ufmg.coltec.data.ApplicationDB;
 import br.ufmg.coltec.trabalhofinal.R;
-import br.ufmg.coltec.trabalhofinal.data.ApplicationDB;
-import br.ufmg.coltec.trabalhofinal.data.entities.User;
-import br.ufmg.coltec.trabalhofinal.data.dao.UserDAO;
+import br.ufmg.coltec.data.entities.User;
+import br.ufmg.coltec.data.dao.UserDAO;
 
 public class RegisterActivity extends AppCompatActivity {
     private ApplicationDB applicationDB;

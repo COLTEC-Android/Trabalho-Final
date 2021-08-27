@@ -1,4 +1,4 @@
-package br.ufmg.coltec.trabalhofinal.data.dao;
+package br.ufmg.coltec.data.dao;
 
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -9,7 +9,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.ufmg.coltec.trabalhofinal.data.entities.Favorite;
+import br.ufmg.coltec.data.entities.Favorite;
 
 public class FavoriteDAO {
 

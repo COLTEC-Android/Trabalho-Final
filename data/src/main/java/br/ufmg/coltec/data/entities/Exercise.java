@@ -1,4 +1,4 @@
-package br.ufmg.coltec.trabalhofinal.data.entities;
+package br.ufmg.coltec.data.entities;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -11,10 +11,11 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import br.ufmg.coltec.data.ApplicationDB;
 import br.ufmg.coltec.trabalhofinal.R;
-import br.ufmg.coltec.trabalhofinal.data.ApplicationDB;
-import br.ufmg.coltec.trabalhofinal.data.dao.ExerciseDAO;
-import br.ufmg.coltec.trabalhofinal.data.entities.Exercise;
+import br.ufmg.coltec.data.dao.ExerciseDAO;
+import br.ufmg.coltec.data.entities.Exercise;
 import br.ufmg.coltec.trabalhofinal.business.adapter.ExerciseAdapter;
 
 public class HomeActivity extends AppCompatActivity {
