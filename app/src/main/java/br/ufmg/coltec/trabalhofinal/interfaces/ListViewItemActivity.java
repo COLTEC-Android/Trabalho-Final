@@ -32,7 +32,8 @@ public class ListViewItemActivity extends AppCompatActivity {
 
         getComponents();
         setComponents();
-        setFavoriteAction();
+        if(getIntent().getBooleanExtra("canFavorite", true))
+            setFavoriteAction();
     }
 
     private void getComponents(){
@@ -41,6 +42,7 @@ public class ListViewItemActivity extends AppCompatActivity {
         description = findViewById(R.id.item_description);
         image = findViewById(R.id.item_image);
         btnFavorite = findViewById(R.id.favorite);
+        btnFavorite.setVisibility(ImageView.INVISIBLE);
     }
 
     private void setComponents(){
@@ -56,6 +58,7 @@ public class ListViewItemActivity extends AppCompatActivity {
     }
 
     public void setFavoriteAction(){
+        btnFavorite.setVisibility(ImageView.VISIBLE);
         FavoriteDAO favoriteDAO = new FavoriteDAO(ApplicationDB.getInstance(this));
         Favorite favorite = new Favorite(email, getIntent().getStringExtra("name"));
         Boolean clicked;

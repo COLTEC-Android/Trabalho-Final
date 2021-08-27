@@ -53,6 +53,7 @@ public class FavoritesActivity extends AppCompatActivity {
                 Intent intent = new Intent(FavoritesActivity.this, ListViewItemActivity.class);
                 intent.putExtra("name", exerciseList.get(position).getName());
                 intent.putExtra("email", userId);
+                intent.putExtra("canFavorite", false);
                 startActivity(intent);
             }
         });

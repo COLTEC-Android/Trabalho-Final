@@ -94,6 +94,7 @@ public class HomeActivity extends AppCompatActivity {
                 Intent intent = new Intent(HomeActivity.this, ListViewItemActivity.class);
                 intent.putExtra("name", e.getName());
                 intent.putExtra("email", email);
+                intent.putExtra("canFavorite", true);
                 startActivity(intent);
             }
         });

@@ -35,16 +35,15 @@
         android:layout_marginTop="20dp" />
 
     <ImageButton
+        android:id="@+id/favorite"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:id="@+id/favorite"
-        android:src="@drawable/ic_baseline_star_24_black"
-        android:layout_toRightOf="@id/item_image"
         android:layout_centerInParent="true"
         android:layout_marginLeft="50dp"
-        android:clickable="true"
+        android:layout_toRightOf="@id/item_image"
         android:background="@color/transparent"
-        />
+        android:clickable="true"
+        android:src="@drawable/ic_baseline_star_24_black"/>
 
     <TextView
         android:layout_width="wrap_content"
