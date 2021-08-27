@@ -1,4 +1,4 @@
-package br.ufmg.coltec.trabalhofinal;
+package br.ufmg.coltec.trabalhofinal.classesintermediarias;
 
 import android.content.Context;
 import android.view.View;
@@ -7,6 +7,8 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import java.util.List;
+
+import br.ufmg.coltec.classesdemodelo.Book;
 
 public class BookAdapter extends BaseAdapter {
 

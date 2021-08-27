@@ -1,4 +1,4 @@
-package br.ufmg.coltec.trabalhofinal;
+package br.ufmg.coltec.trabalhofinal.classesintermediarias;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +14,10 @@ import androidx.lifecycle.ViewModelProvider;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.ufmg.coltec.classesdemodelo.Book;
+import br.ufmg.coltec.trabalhofinal.R;
+import br.ufmg.coltec.trabalhofinal.activities.BookDetailsActivity;
+
 public class FavoriteBooksListFragment extends ListFragment {
 
     private SharedBookViewModel model;
@@ -27,8 +31,8 @@ public class FavoriteBooksListFragment extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        //TODO registrar última lista e carregar (com BD)
         View view = inflater.inflate(R.layout.fragment_books_list, container, false);
-
 
         BookAdapter bookAdapter = new BookAdapter(getContext(), books);
         setListAdapter(bookAdapter);
@@ -60,7 +64,11 @@ public class FavoriteBooksListFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
 
-        Book selectedBook = this.books.get(position);
+        BookSearch bs = new BookSearch();
+        BookSearchProxy pbs = new BookSearchProxy(bs);
+        pbs.setCache(books);
+
+        Book selectedBook = pbs.getCache().get(position);
 
         Intent intent = new Intent(this.getActivity(), BookDetailsActivity.class);
         intent.putExtra("book", selectedBook);

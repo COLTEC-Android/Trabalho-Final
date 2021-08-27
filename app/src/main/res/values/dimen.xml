@@ -5,4 +5,5 @@
     <dimen name="dimens_txt_book_details">20sp</dimen>
     <dimen name="dimens_margin_left_book_details">15sp</dimen>
     <dimen name="dimens_padding_book_details">40sp</dimen>
+    <dimen name="dimens_txt_btn_theme">25sp</dimen>
 </resources>

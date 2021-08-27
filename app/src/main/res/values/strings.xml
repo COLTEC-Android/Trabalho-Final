@@ -16,5 +16,9 @@
     <string name="string_dialog_btn_positive">Sim</string>
     <string name="string_dialog_btn_negative">Não</string>
     <string name="string_last_access">Último acesso: </string>
-    <string name="string_txt_splash">Splash Screen</string>
+    <string name="string_txt_splash">Tela de Splash</string>
+    <string name="string_theme_purple">Tema\nroxo</string>
+    <string name="string_theme_gold">Tema\ndourado</string>
+    <string name="string_share">Compartilhar</string>
+    <string name="string_toast_share">Não há imagem para compartilhar</string>
 </resources>

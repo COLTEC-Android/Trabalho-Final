@@ -1,4 +1,4 @@
-package br.ufmg.coltec.trabalhofinal;
+package br.ufmg.coltec.classesdemodelo;
 
 import java.io.Serializable;
 

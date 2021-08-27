@@ -1,4 +1,4 @@
-package br.ufmg.coltec.trabalhofinal;
+package br.ufmg.coltec.trabalhofinal.classesintermediarias;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -17,6 +17,10 @@ import androidx.lifecycle.ViewModelProvider;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import br.ufmg.coltec.classesdemodelo.Book;
+import br.ufmg.coltec.trabalhofinal.R;
+import br.ufmg.coltec.trabalhofinal.activities.BookDetailsActivity;
 
 public class BooksListFragment extends ListFragment {
 
@@ -39,7 +43,11 @@ public class BooksListFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
 
-        Book selectedBook = this.books.get(position);
+        BookSearch bs = new BookSearch();
+        BookSearchProxy pbs = new BookSearchProxy(bs);
+        pbs.setCache(books);
+
+        Book selectedBook = pbs.getCache().get(position);
 
         Intent intent = new Intent(this.getActivity(), BookDetailsActivity.class);
         intent.putExtra("book", selectedBook);
@@ -48,7 +56,12 @@ public class BooksListFragment extends ListFragment {
         getListView().setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                Book selectedBook = books.get(position);
+                BookSearch bs = new BookSearch();
+                BookSearchProxy pbs = new BookSearchProxy(bs);
+                pbs.setCache(books);
+
+                Book selectedBook = pbs.getCache().get(position);
+
                 Log.v("long clicked", "pos: " + position);
 
                 AlertDialog.Builder alertBuilder = new AlertDialog.Builder(getContext());

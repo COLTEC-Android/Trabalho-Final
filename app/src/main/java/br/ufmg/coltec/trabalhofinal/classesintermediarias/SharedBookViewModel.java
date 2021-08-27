@@ -1,13 +1,10 @@
-package br.ufmg.coltec.trabalhofinal;
-
-import android.content.ClipData;
+package br.ufmg.coltec.trabalhofinal.classesintermediarias;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import java.io.Serializable;
-import java.util.List;
+import br.ufmg.coltec.classesdemodelo.Book;
 
 public class SharedBookViewModel extends ViewModel {
 

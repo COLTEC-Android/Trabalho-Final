@@ -1,4 +1,4 @@
-package br.ufmg.coltec.trabalhofinal;
+package br.ufmg.coltec.trabalhofinal.classesintermediarias;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,9 +6,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import br.ufmg.coltec.classesdemodelo.Book;
+import br.ufmg.coltec.trabalhofinal.R;
 
 public class BookDAO extends SQLiteOpenHelper {
 
