@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/set_theme"
+        android:icon="@drawable/ic_baseline_brightness_medium_24"
+        android:title="@string/set_theme"
+        app:showAsAction="always" />
+    <item
+        android:visible="false"
+        android:id="@+id/fav"
+        android:title="@string/favorite"
+        app:showAsAction="never" />
+
+    <item
+        android:visible="false"
+        android:id="@+id/users_list"
+        android:title="@string/users_list"
+        app:showAsAction="never" />
+</menu>
