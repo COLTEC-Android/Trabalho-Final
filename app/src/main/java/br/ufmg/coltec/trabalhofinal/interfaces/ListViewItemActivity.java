@@ -12,6 +12,7 @@ import br.ufmg.coltec.trabalhofinal.business.ThemeManager;
 
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -36,6 +37,8 @@ public class ListViewItemActivity extends AppCompatActivity {
         setComponents();
         if(getIntent().getBooleanExtra("canFavorite", true))
             setFavoriteAction();
+        else
+            btnFavorite.setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -54,7 +57,6 @@ public class ListViewItemActivity extends AppCompatActivity {
         description = findViewById(R.id.item_description);
         image = findViewById(R.id.item_image);
         btnFavorite = findViewById(R.id.favorite);
-        btnFavorite.setVisibility(ImageView.INVISIBLE);
 
         name.setText(exercise.getName());
         type.setText(exercise.getType());
@@ -64,7 +66,6 @@ public class ListViewItemActivity extends AppCompatActivity {
     }
 
     public void setFavoriteAction(){
-        btnFavorite.setVisibility(ImageView.VISIBLE);
         FavoriteDAO favoriteDAO = new FavoriteDAO(ApplicationDB.getInstance(this));
         Favorite favorite = new Favorite(email, getIntent().getStringExtra("name"));
 
