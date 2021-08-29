@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">TrabalhoFinal: DEMO</string>
+    <string name="string_txt_btn_main">Entrar</string>
+    <string name="string_txt_books_list">Lista de livros</string>
+    <string name="string_txt_favorite_books_list">Favoritos</string>
+    <string name="string_book_details_title">Título</string>
+    <string name="string_book_details_author">Autor</string>
+    <string name="string_book_details_genre">Gênero</string>
+    <string name="string_book_details_publisher">Editora</string>
+    <string name="string_book_image_description">Foto do livro</string>
+    <string name="string_favorite_book_already_on_list">Este livro já está nos favoritos</string>
+    <string name="string_dialog_negative">Livro NÃO adicionado!</string>
+    <string name="string_dialog_positive">Livro adicionado aos favoritos!</string>
+    <string name="string_dialog_title">Adicionar a favoritos</string>
+    <string name="string_dialog_message">Adicionar livro à lista de favoritos?</string>
+    <string name="string_dialog_btn_positive">Sim</string>
+    <string name="string_dialog_btn_negative">Não</string>
+    <string name="string_last_access">Último acesso: </string>
+    <string name="string_txt_splash">Tela de Splash</string>
+    <string name="string_theme_purple">Tema\nroxo</string>
+    <string name="string_theme_gold">Tema\ndourado</string>
+    <string name="string_share">Compartilhar</string>
+    <string name="string_toast_share">Não há imagem para compartilhar</string>
+    <string name="string_toast_demo_add_to_favorites">A versão DEMO não contém essa função</string>
+</resources>

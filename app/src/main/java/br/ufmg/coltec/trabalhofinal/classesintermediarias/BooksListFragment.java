@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufmg.coltec.classesdemodelo.Book;
+import br.ufmg.coltec.trabalhofinal.BuildConfig;
 import br.ufmg.coltec.trabalhofinal.R;
 import br.ufmg.coltec.trabalhofinal.activities.BookDetailsActivity;
 
@@ -80,13 +81,19 @@ public class BooksListFragment extends ListFragment {
                 alertBuilder.setPositiveButton(R.string.string_dialog_btn_positive, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        if (BuildConfig.FLAVOR.equals("full")) {
+                            bookModel = new ViewModelProvider(requireActivity()).get(SharedBookViewModel.class);
+                            bookModel.setText(selectedBook);
+                        } else {
+                            Toast.makeText(getContext(), R.string.string_toast_demo_add_to_favorites, Toast.LENGTH_LONG).show();
+                        }
 
-                        bookModel = new ViewModelProvider(requireActivity()).get(SharedBookViewModel.class);
-                        bookModel.setText(selectedBook);
                     }
                 });
+
                 AlertDialog dialog = alertBuilder.create();
                 dialog.show();
+
                 return true;
             }
         });

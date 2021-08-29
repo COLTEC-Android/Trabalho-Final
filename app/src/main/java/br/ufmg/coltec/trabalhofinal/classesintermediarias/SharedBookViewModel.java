@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel;
 
 import br.ufmg.coltec.classesdemodelo.Book;
 
+
 public class SharedBookViewModel extends ViewModel {
 
     private MutableLiveData<Book> text = new MutableLiveData<>();

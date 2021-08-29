@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Final work: FULL</string>
+    <string name="string_txt_btn_main">Enter</string>
+    <string name="string_txt_books_list">Books list</string>
+    <string name="string_txt_favorite_books_list">Favorites</string>
+    <string name="string_book_details_title">Title</string>
+    <string name="string_book_details_author">Author</string>
+    <string name="string_book_details_genre">Genre</string>
+    <string name="string_book_details_publisher">Publisher</string>
+    <string name="string_book_image_description">Book picture</string>
+    <string name="string_favorite_book_already_on_list">This book is already in favorites</string>
+    <string name="string_dialog_negative">Book NOT added!</string>
+    <string name="string_dialog_positive">Book added to favorites!</string>
+    <string name="string_dialog_title">Add to favorites</string>
+    <string name="string_dialog_message">Add book to favorites list?</string>
+    <string name="string_dialog_btn_positive">Yes</string>
+    <string name="string_dialog_btn_negative">No</string>
+    <string name="string_last_access">Last access: </string>
+    <string name="string_txt_splash">Splash Screen</string>
+    <string name="string_theme_purple">Theme\npurple</string>
+    <string name="string_theme_gold">Theme\ngold</string>
+    <string name="string_share">Share</string>
+    <string name="string_toast_share">There is no image to share</string>
+    <string name="string_toast_demo_add_to_favorites">The DEMO version does not contain this function</string>
+</resources>

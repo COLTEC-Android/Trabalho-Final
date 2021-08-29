@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:contentDescription="@string/string_book_image_description"
-        android:src="@drawable/ic_launcher_background" />
+        android:src="@drawable/ic_launcher_foreground" />
 
     <LinearLayout
         android:id="@+id/linear_title"

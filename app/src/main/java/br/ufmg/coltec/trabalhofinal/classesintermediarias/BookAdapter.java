@@ -10,6 +10,7 @@ import java.util.List;
 
 import br.ufmg.coltec.classesdemodelo.Book;
 
+
 public class BookAdapter extends BaseAdapter {
 
     private List<Book> books;

@@ -1,13 +1,5 @@
 package br.ufmg.coltec.trabalhofinal.classesintermediarias;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
-
-import androidx.lifecycle.ViewModelProvider;
-import androidx.test.espresso.Espresso;
-
 import org.junit.Test;
 import org.mockito.Mockito;
 
@@ -15,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufmg.coltec.classesdemodelo.Book;
-import br.ufmg.coltec.trabalhofinal.R;
 
 public class FavoriteBooksListFragmentTest {
 

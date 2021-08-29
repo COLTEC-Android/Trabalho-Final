@@ -34,7 +34,6 @@ public class BooksListFragmentTest {
         Book book = new Book();
 
         List<Book> list = new ArrayList<>();
-        List<Book> list1 = new ArrayList<>();
 
         list.add(book);
 

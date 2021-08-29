@@ -18,6 +18,7 @@ import br.ufmg.coltec.classesdemodelo.Book;
 import br.ufmg.coltec.trabalhofinal.R;
 import br.ufmg.coltec.trabalhofinal.activities.BookDetailsActivity;
 
+
 public class FavoriteBooksListFragment extends ListFragment {
 
     private SharedBookViewModel model;

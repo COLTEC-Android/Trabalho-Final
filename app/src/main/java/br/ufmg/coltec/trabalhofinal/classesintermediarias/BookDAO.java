@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufmg.coltec.classesdemodelo.Book;
-import br.ufmg.coltec.trabalhofinal.R;
 
 public class BookDAO extends SQLiteOpenHelper {
 
@@ -46,7 +45,7 @@ public class BookDAO extends SQLiteOpenHelper {
         try (SQLiteDatabase db = getWritableDatabase()) {
             ContentValues values = new ContentValues();
 
-            values.put("photoId", R.drawable.ic_launcher_background);
+            values.put("photoId", b.getPhotoId());
             values.put("title", b.getTitle());
             values.put("author", b.getAuthor());
             values.put("genre", b.getGenre());
@@ -59,6 +58,7 @@ public class BookDAO extends SQLiteOpenHelper {
     }
 
     public List<Book> getAll() {
+
         List<Book> books = new ArrayList<>();
 
         try (SQLiteDatabase db = getReadableDatabase()) {
