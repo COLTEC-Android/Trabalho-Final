@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/action_theme_change"
+        android:icon="@drawable/outline_dark_mode_24"
+        android:title="@string/theme_change"
+        app:showAsAction="ifRoom" />
+
+</menu>

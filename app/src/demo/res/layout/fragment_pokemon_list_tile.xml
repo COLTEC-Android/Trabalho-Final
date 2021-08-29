@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/pokemon_list_tile"
+    android:layout_width="match_parent"
+    app:cardElevation="20dp"
+    android:layout_height="120dp"
+    android:layout_margin="10dp"
+    android:background="@color/background_color"
+    android:clickable="true"
+    android:elevation="3dp"
+    android:focusable="true"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/img_poke_cover"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/pokeball" />
+
+    <TextView
+        android:id="@+id/txt_poke_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="130dp"
+        android:text=""
+        android:textColor="@color/text_color"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/txt_poke_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginHorizontal="8dp"
+        android:text=""
+        android:textColor="@color/text_color"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="120dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_poke_type1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:text=""
+            android:textColor="@color/text_color"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txt_poke_type2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:text=""
+            android:textColor="@color/text_color"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_favorite"
+        android:visibility="gone"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_gravity="bottom|end"
+        android:background="@drawable/outline_star_24" />
+
+</androidx.cardview.widget.CardView>

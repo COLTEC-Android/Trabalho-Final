@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">MyPokeList</string>
+    <string name="share">Share</string>
+    <string name="search">Search</string>
+    <string name="theme_change">Change Theme</string>
+    <string name="favorite_filter">Filter</string>
+    <string name="title_height">Height: </string>
+    <string name="title_weight">"Weight: "</string>
+    <string name="abilities">"Abilities: "</string>
+    <string name="text_ha">&#8226; %1$s (Hidden)</string>
+    <string name="text_h">"&#8226; %1$s "</string>
+    <string name="text_height">%1$s m</string>
+    <string name="text_weight">%1$s kg</string>
+    <string name="text_id">#%1$s</string>
+    <string name="text_hp">HP</string>
+    <string name="text_atk">ATK</string>
+    <string name="text_def">DEF</string>
+    <string name="text_spatk">SP.ATK</string>
+    <string name="text_spdef">SP.DEF</string>
+    <string name="text_speed">SPEED</string>
+    <string name="layout_change">Change Layout</string>
+    <string name="menu_filter_all">All</string>
+    <string name="menu_filter_favorites">Only favorites</string>
+</resources>

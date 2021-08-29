@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="red_200">#FFD60700</color>
+    <color name="red_500">#FFDB211A</color>
+    <color name="red_700">#FFF50F07</color>
+    <color name="black">#FF000000</color>
+    <color name="black_alter">#FF202020</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gold">#FFFFD700</color>
+    <color name="gray">#FF808080</color>
+    <color name="background_color">#FF202020</color>
+    <color name="text_color">#FFFFFFFF</color>
+    <color name="appbar">#FF121212</color>
+
+</resources>
