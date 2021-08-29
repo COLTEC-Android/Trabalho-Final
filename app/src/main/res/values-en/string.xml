@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="slogan">Your training app!</string>
-    <string name="app_name">Calisthenics</string>
+    <string name="app_name_main">Calisthenics</string>
     <string name="login">Sign In</string>
     <string name="register">Sign Up</string>
     <string name="name_lbl">Name</string>
