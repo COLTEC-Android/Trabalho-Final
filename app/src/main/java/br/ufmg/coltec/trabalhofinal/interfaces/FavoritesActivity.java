@@ -17,21 +17,17 @@ import br.ufmg.coltec.data.dao.ExerciseDAO;
 import br.ufmg.coltec.data.dao.FavoriteDAO;
 import br.ufmg.coltec.data.dao.UserDAO;
 import br.ufmg.coltec.data.entities.Exercise;
+import br.ufmg.coltec.trabalhofinal.business.ThemeManager;
 import br.ufmg.coltec.trabalhofinal.business.adapter.ExerciseAdapter;
 
 public class FavoritesActivity extends AppCompatActivity {
 
-    private UserDAO userDAO;
-    private FavoriteDAO favoriteDAO;
-    private ExerciseDAO exerciseDAO;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ThemeManager themeManager = new ThemeManager(this);
+        this.setTheme(themeManager.getCurrentTheme());
         super.onCreate(savedInstanceState);
-        userDAO = new UserDAO(ApplicationDB.getInstance(this));
         setContentView(R.layout.activity_favorites);
-        favoriteDAO = new FavoriteDAO(ApplicationDB.getInstance(this));
-        exerciseDAO = new ExerciseDAO(ApplicationDB.getInstance(this));
         setListView();
     }
 
@@ -39,10 +35,18 @@ public class FavoritesActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         setListView();
+        ThemeManager themeManager = new ThemeManager(this);
+        this.setTheme(themeManager.getCurrentTheme());
+        super.onResume();
     }
 
     private void setListView(){
-        List<Exercise> exerciseList = exerciseDAO.getSpecificList(favoriteDAO.getByUser(getIntent().getStringExtra("userId")));
+        UserDAO userDAO = new UserDAO(ApplicationDB.getInstance(this));
+        FavoriteDAO favoriteDAO = new FavoriteDAO(ApplicationDB.getInstance(this));
+        ExerciseDAO exerciseDAO = new ExerciseDAO(ApplicationDB.getInstance(this));
+        String userId = getIntent().getStringExtra("userId");
+
+        List<Exercise> exerciseList = exerciseDAO.getSpecificList(favoriteDAO.getByUser(userId));
         ListView listView = findViewById(R.id.list_view_favorites);
         listView.setAdapter(new ExerciseAdapter(this, exerciseList));
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

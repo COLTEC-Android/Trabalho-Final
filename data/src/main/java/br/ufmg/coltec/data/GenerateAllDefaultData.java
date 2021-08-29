@@ -1,19 +1,16 @@
 package br.ufmg.coltec.data;
 
 import android.content.ContentValues;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.os.Environment;
 import android.os.StrictMode;
 import android.util.Log;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URI;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import br.ufmg.coltec.data.entities.Exercise;
@@ -25,21 +22,21 @@ public class GenerateAllDefaultData {
     private static final String TABLE_COLUMN_TWO = "description";
     private static final String TABLE_COLUMN_THREE = "type";
     private static final String TABLE_COLUMN_FOUR = "image";
-    private SQLiteDatabase db;
     private List<Exercise> exerciseList;
     private ApplicationDB applicationDB;
 
     public GenerateAllDefaultData(ApplicationDB applicationDB){
         this.applicationDB = applicationDB;
         exerciseList = new ArrayList<>();
-        insertData();
+        defineTheme();
+        data();
     }
 
     public List<Exercise> getExerciseList() {
         return exerciseList;
     }
 
-    private void insertData(){
+    private void data(){
         InputStream inputStream;
         Bitmap bitmap;
 
@@ -283,5 +280,13 @@ public class GenerateAllDefaultData {
         }finally {
             //this.db.close();
         }
+    }
+
+    private void defineTheme(){
+        Log.d("DEFINE_THEME", "WHITE THEME");
+        SharedPreferences pref = ApplicationDB.getContext().getSharedPreferences("Theme", 0);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putBoolean("themeKey", true); //white theme
+        editor.commit();
     }
 }

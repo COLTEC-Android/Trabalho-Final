@@ -47,7 +47,7 @@ public class ApplicationDB extends SQLiteOpenHelper {
         return instance;
     }
 
-    public Context getContext(){
+    public static Context getContext(){
         return context;
     }
 

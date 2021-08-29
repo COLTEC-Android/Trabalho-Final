@@ -92,9 +92,6 @@ public class FavoriteDAO {
 
     public List<String> getByUser(String id){
         List<String> exerciseList = new ArrayList<>();
-
-        Log.d("USERV_FAV", id);
-
         for(Favorite f : getAll()){
             if(f.getIdUser().equals(id)){
                 Log.d("USER_FAV", f.getIdExercise());

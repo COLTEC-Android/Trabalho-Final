@@ -2,6 +2,8 @@ package br.ufmg.coltec.trabalhofinal.interfaces;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -11,30 +13,43 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import br.ufmg.coltec.data.ApplicationDB;
+import br.ufmg.coltec.data.ThemeData;
 import br.ufmg.coltec.trabalhofinal.R;
 import br.ufmg.coltec.data.dao.ExerciseDAO;
 import br.ufmg.coltec.data.entities.Exercise;
+import br.ufmg.coltec.trabalhofinal.business.ThemeManager;
 import br.ufmg.coltec.trabalhofinal.business.adapter.ExerciseAdapter;
 
 public class HomeActivity extends AppCompatActivity {
-    private static int CURRENT_THEME = R.style.Theme_TrabalhoFinal;
+    private static int CURRENT_THEME;
     private String email;
-    private TextView textViewUserName;
     private ListView listView;
     private ApplicationDB applicationDB;
     private ExerciseDAO exerciseDAO;
-    private ImageView exerciseImage;
+    ThemeManager themeManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setTheme(CURRENT_THEME);
+        themeManager = new ThemeManager(this);
+        Log.d("CURRENT_THEME", String.valueOf(themeManager.getCurrentTheme()));
+        this.setTheme(themeManager.getCurrentTheme());
+
         setContentView(R.layout.activity_home);
         setDataBase();
         email = getIntent().getStringExtra("email");
         setListView();
+
+    }
+
+    @Override
+    protected void onResume() {
+        ThemeManager themeManager = new ThemeManager(this);
+        this.setTheme(themeManager.getCurrentTheme());
+        super.onResume();
     }
 
     @Override
@@ -49,18 +64,20 @@ public class HomeActivity extends AppCompatActivity {
 
         switch (id){
             case R.id.set_theme:
-                if(CURRENT_THEME == R.style.Theme_TrabalhoFinal){
-                    Log.d("CHANGE THEME", "DARK");
-                    switchActivityTheme(R.style.Theme_TrabalhoFinalDark);
-                }else{
-                    Log.d("CHANGE THEME", "LIGHT");
-                    switchActivityTheme(R.style.Theme_TrabalhoFinal);
-                }
-                return  true;
+                themeManager.setCurrentTheme();
+                HomeActivity.this.finish();
+                Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
+                intent.putExtra("email", getIntent().getStringExtra("email"));
+                HomeActivity.this.startActivity(intent);
+                return true;
             case R.id.fav:
                 Intent favoriteActivity = new Intent(HomeActivity.this, FavoritesActivity.class);
                 favoriteActivity.putExtra("userId", email);
-                startActivity(favoriteActivity);
+                try{
+                    startActivity(favoriteActivity);
+                }catch (Exception e){
+                    Toast.makeText(this, "Error", Toast.LENGTH_LONG).show();
+                }
                 return  true;
             case R.id.users_list:
                 Intent usersActivity = new Intent(HomeActivity.this, ListViewUsersActivity.class);
@@ -69,12 +86,6 @@ public class HomeActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
-
-    private void switchActivityTheme(int themeId) {
-        CURRENT_THEME = themeId;
-        HomeActivity.this.finish();
-        HomeActivity.this.startActivity(new Intent(HomeActivity.this, HomeActivity.class));
     }
 
     private void setDataBase(){

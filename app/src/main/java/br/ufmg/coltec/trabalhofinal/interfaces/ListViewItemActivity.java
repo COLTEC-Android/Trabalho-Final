@@ -8,6 +8,7 @@ import br.ufmg.coltec.data.dao.ExerciseDAO;
 import br.ufmg.coltec.data.dao.FavoriteDAO;
 import br.ufmg.coltec.data.entities.Exercise;
 import br.ufmg.coltec.data.entities.Favorite;
+import br.ufmg.coltec.trabalhofinal.business.ThemeManager;
 
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -27,33 +28,38 @@ public class ListViewItemActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ThemeManager themeManager = new ThemeManager(this);
+        this.setTheme(themeManager.getCurrentTheme());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view_item);
 
-        getComponents();
         setComponents();
         if(getIntent().getBooleanExtra("canFavorite", true))
             setFavoriteAction();
     }
 
-    private void getComponents(){
-        name = findViewById(R.id.item_name);
-        type = findViewById(R.id.item_type);
-        description = findViewById(R.id.item_description);
-        image = findViewById(R.id.item_image);
-        btnFavorite = findViewById(R.id.favorite);
-        btnFavorite.setVisibility(ImageView.INVISIBLE);
+    @Override
+    protected void onResume() {
+        ThemeManager themeManager = new ThemeManager(this);
+        this.setTheme(themeManager.getCurrentTheme());
+        super.onResume();
     }
 
     private void setComponents(){
         ExerciseDAO exerciseDAO = new ExerciseDAO(ApplicationDB.getInstance(this));
         Exercise exercise = exerciseDAO.getByName(getIntent().getStringExtra("name"));
 
+        name = findViewById(R.id.item_name);
+        type = findViewById(R.id.item_type);
+        description = findViewById(R.id.item_description);
+        image = findViewById(R.id.item_image);
+        btnFavorite = findViewById(R.id.favorite);
+        btnFavorite.setVisibility(ImageView.INVISIBLE);
+
         name.setText(exercise.getName());
         type.setText(exercise.getType());
         description.setText(exercise.getDescription());
         image.setImageBitmap(BitmapFactory.decodeByteArray(exercise.getImage(), 0, exercise.getImage().length));
-
         email = getIntent().getStringExtra("email");
     }
 
@@ -61,6 +67,7 @@ public class ListViewItemActivity extends AppCompatActivity {
         btnFavorite.setVisibility(ImageView.VISIBLE);
         FavoriteDAO favoriteDAO = new FavoriteDAO(ApplicationDB.getInstance(this));
         Favorite favorite = new Favorite(email, getIntent().getStringExtra("name"));
+
         Boolean clicked;
         if(favoriteDAO.isFavorited(favorite))
         {

@@ -14,6 +14,7 @@ import br.ufmg.coltec.data.ApplicationDB;
 import br.ufmg.coltec.trabalhofinal.R;
 import br.ufmg.coltec.data.entities.User;
 import br.ufmg.coltec.data.dao.UserDAO;
+import br.ufmg.coltec.trabalhofinal.business.ThemeManager;
 
 public class RegisterActivity extends AppCompatActivity {
     private ApplicationDB applicationDB;
@@ -28,10 +29,14 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         progressBar.setVisibility(View.INVISIBLE);
-    }
+        ThemeManager themeManager = new ThemeManager(this);
+        this.setTheme(themeManager.getCurrentTheme());
+        }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ThemeManager themeManager = new ThemeManager(this);
+        this.setTheme(themeManager.getCurrentTheme());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         applicationDB = ApplicationDB.getInstance(this);

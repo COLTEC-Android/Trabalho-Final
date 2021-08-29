@@ -6,6 +6,7 @@ import br.ufmg.coltec.data.ApplicationDB;
 import br.ufmg.coltec.trabalhofinal.R;
 import br.ufmg.coltec.data.entities.User;
 import br.ufmg.coltec.data.dao.UserDAO;
+import br.ufmg.coltec.trabalhofinal.business.ThemeManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,29 +17,30 @@ import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText email;
-    private EditText password;
-    private Button btnSignIn;
-    private ApplicationDB applicationDB;
-    private UserDAO userDAO;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ThemeManager themeManager = new ThemeManager(this);
+        this.setTheme(themeManager.getCurrentTheme());
         super.onCreate(savedInstanceState);
-        applicationDB = ApplicationDB.getInstance(this);
-        userDAO = new UserDAO(applicationDB);
         setContentView(R.layout.activity_login);
-        setEditTexts();
-        setButtons();
+        setComponents();
     }
 
-    private  void setEditTexts(){
-        email = findViewById(R.id.edit_text_register_email);
-        password = findViewById(R.id.edit_text_register_password);
+    @Override
+    protected void onResume() {
+        ThemeManager themeManager = new ThemeManager(this);
+        this.setTheme(themeManager.getCurrentTheme());
+        super.onResume();
     }
 
-    private void setButtons(){
-        btnSignIn = findViewById(R.id.btn_sign_in);
+    private void setComponents(){
+        EditText email = findViewById(R.id.edit_text_register_email);
+        EditText password = findViewById(R.id.edit_text_register_password);
+        Button btnSignIn = findViewById(R.id.btn_sign_in);
+
+        ApplicationDB applicationDB = ApplicationDB.getInstance(this);
+        UserDAO userDAO = new UserDAO(applicationDB);
+
         btnSignIn.setOnClickListener(view -> {
             User user = userDAO.validateUser(email.getText().toString(), password.getText().toString());
             if(user == null){

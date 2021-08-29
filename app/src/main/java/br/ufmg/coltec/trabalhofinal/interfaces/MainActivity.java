@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import br.ufmg.coltec.trabalhofinal.R;
+import br.ufmg.coltec.trabalhofinal.business.ThemeManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,9 +15,18 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ThemeManager themeManager = new ThemeManager(this);
+        this.setTheme(themeManager.getCurrentTheme());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setButtons();
+    }
+
+    @Override
+    protected void onResume() {
+        ThemeManager themeManager = new ThemeManager(this);
+        this.setTheme(themeManager.getCurrentTheme());
+        super.onResume();
     }
 
     private void setButtons(){
