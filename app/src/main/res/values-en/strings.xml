@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search">Search</string>
+    <string name="favorites">Favorites</string>
+    <string name="movie_title">Movie title</string>
+    <string name="original_title">Original title</string>
+    <string name="original_language">Original language</string>
+    <string name="overview">Overview</string>
+    <string name="release_date">Release date</string>
+    <string name="vote_average">Rating</string>
+    <string name="locale">en-US</string>
+    <string name="favor_frag">Favorite movies</string>
+    <string name="theme_switch">Theme</string>
+    <string name="nullDetail">Select a movie</string>
+    <string name="add_favorite">Add to favorites</string>
+    <string name="msg_add">"Movie added to favorites "</string>
+    <string name="msg_err">Unable to add to favorites</string>
+    <string name="share">Share</string>
+    <string name="no_favorite">The list of favorites is empty</string>
+</resources>

@@ -1,3 +1,21 @@
 <resources>
-    <string name="app_name">TrabalhoFinal</string>
+    <string name="app_name" translatable="false">MovieFinder</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="search">Pesquisar</string>
+    <string name="favorites">Favoritos</string>
+    <string name="movie_title">Título do filme</string>
+    <string name="original_title">Título original</string>
+    <string name="original_language">Idioma original</string>
+    <string name="overview">Sinopse</string>
+    <string name="release_date">Data de lançamento</string>
+    <string name="vote_average">Avaliação</string>
+    <string name="locale">pt-BR</string>
+    <string name="favor_frag">Filmes favoritos</string>
+    <string name="theme_switch">Tema</string>
+    <string name="nullDetail">Selecione um filme</string>
+    <string name="add_favorite">Adicionar aos favoritos</string>
+    <string name="msg_add">Filme adicionado aos favoritos</string>
+    <string name="msg_err">Não foi possível adicionar aos favoritos</string>
+    <string name="share">Compartilhar</string>
+    <string name="no_favorite">A lista de favoritos está vazia</string>
 </resources>

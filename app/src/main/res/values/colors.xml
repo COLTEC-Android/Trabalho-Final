@@ -7,4 +7,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="metallic_gold">#D4AF37</color>
+    <color name="reef_gold">#AA8C2C</color>
+    <color name="yukon_gold">#887023</color>
+    <color name="horses_neck">#6D5A1C</color>
+    <color name="bronze_olive">#574816</color>
+    <color name="madras">#463A12</color>
+    <color name="mikado">#382E0E</color>
+    <color name="maire">#2D250B</color>
+    <color name="maire_2">#241E09</color>
+    <color name="maire_3">#1D1807</color>
 </resources>

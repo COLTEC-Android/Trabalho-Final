@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/favorites_sw600d_land"
+    android:orientation="horizontal"
+    tools:context=".ui.FavoritesActivity">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:layout_height="match_parent"
+        android:layout_width="400dp"
+        class="br.ufmg.coltec.trabalhofinal.ui.FavoritesFragment"
+        android:id="@+id/main_frag"/>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        class="br.ufmg.coltec.trabalhofinal.ui.DetailFragment"
+        android:id="@+id/detail_frag"/>
+
+</LinearLayout>

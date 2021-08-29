@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search">Buscar</string>
+    <string name="favorites">Favoritos</string>
+    <string name="movie_title">Título de la película</string>
+    <string name="original_title">Título original</string>
+    <string name="original_language">Idioma original</string>
+    <string name="overview">Sinopsis</string>
+    <string name="release_date">Fecha de lanzamiento</string>
+    <string name="vote_average">Clasificación</string>
+    <string name="locale">es-ES</string>
+    <string name="favor_frag">Peliculas favoritas</string>
+    <string name="theme_switch">Tema</string>
+    <string name="nullDetail">Seleccionar una pelicula</string>
+    <string name="add_favorite">Añadir a los favoritos</string>
+    <string name="msg_add">Película agregada a favoritos</string>
+    <string name="msg_err">" No se puede agregar a favoritos"</string>
+    <string name="share">" Para compartir"</string>
+    <string name="no_favorite">" La lista de favoritos está vacía"</string>
+</resources>
