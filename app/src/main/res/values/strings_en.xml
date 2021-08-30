@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TrabalhoFinal</string>
+
+    <!-- CreateContactListActivity -->
+    <string name="name_english">Name</string>
+    <string name="email_english">Email</string>
+    <string name="phone_english">Phone</string>
+    <string name="linkedin_english">LinkedIn</string>
+    <string name="github_english">GitHub</string>
+</resources>
