@@ -8,4 +8,7 @@
     <string name="phone_english">Phone</string>
     <string name="linkedin_english">LinkedIn</string>
     <string name="github_english">GitHub</string>
+
+    <!-- Menu -->
+    <string name="action_settings_english">Change theme</string>
 </resources>

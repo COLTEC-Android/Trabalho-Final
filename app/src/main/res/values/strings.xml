@@ -8,4 +8,7 @@
     <string name="linkedin_portuguese">LinkedIn</string>
     <string name="github_portuguese">GitHub</string>
 
+    <!-- Menu -->
+    <string name="action_settings_portuguese">Mudar Tema</string>
+
 </resources>

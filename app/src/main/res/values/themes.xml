@@ -13,4 +13,16 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    
+    <!-- Other Theme -->
+    <style name="Theme.TrbalhoFinalOtherTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#202933</item>
+        <item name="colorPrimaryVariant">#010C17</item>
+        <item name="colorOnPrimary">#ffffff</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#284666</item>
+        <item name="colorSecondaryVariant">#063363</item>
+        <item name="colorOnSecondary">#000000</item>
+    </style>
 </resources>
