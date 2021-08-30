@@ -8,7 +8,7 @@
         android:id="@+id/lbl_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nome"/>
+        android:text="@string/name_portuguese"/>
 
     <EditText
         android:id="@+id/input_name"
@@ -20,7 +20,7 @@
         android:id="@+id/lbl_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Email"/>
+        android:text="@string/email_portuguese"/>
 
     <EditText
         android:id="@+id/input_email"
@@ -32,7 +32,7 @@
         android:id="@+id/lbl_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Celular"/>
+        android:text="@string/phone_portuguese"/>
 
     <EditText
         android:id="@+id/input_phone"
@@ -44,7 +44,7 @@
         android:id="@+id/lbl_linkedin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LinkedIn"/>
+        android:text="@string/linkedin_portuguese"/>
 
     <EditText
         android:id="@+id/input_linkedin"
@@ -56,7 +56,7 @@
         android:id="@+id/lbl_github"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GitHub"/>
+        android:text="@string/github_portuguese"/>
 
     <EditText
         android:id="@+id/input_github"
