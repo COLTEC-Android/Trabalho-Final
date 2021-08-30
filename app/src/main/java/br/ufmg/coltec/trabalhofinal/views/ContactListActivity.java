@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentManager;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.ufmg.coltec.trabalhofinal.DAO.ContactDAO;
 import br.ufmg.coltec.trabalhofinal.R;
 import br.ufmg.coltec.trabalhofinal.controllers.ContactsListFragment;
 import br.ufmg.coltec.trabalhofinal.models.Contact;
@@ -21,8 +22,10 @@ public class ContactListActivity extends FragmentActivity {
 
         ContactsListFragment contactsListFragment = new ContactsListFragment();
         ContactDB contactDB = new ContactDB(this);
+        // Instanciando DAO
+        ContactDAO contactDAO = new ContactDAO(contactDB);
 
-        contactsListFragment.setContacts(contactDB.getAllContacts());
+        contactsListFragment.setContacts(contactDAO.getAllContacts());
 
         FragmentManager fragmentManager = getSupportFragmentManager();
 

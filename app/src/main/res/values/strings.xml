@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Agenda de Contatos</string>
+    <string name="app_name_portuguese">Trabalho Final</string>
 
     <!-- CreateContactListActivity -->
     <string name="name_portuguese">Nome</string>

@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import br.ufmg.coltec.trabalhofinal.DAO.ContactDAO;
 import br.ufmg.coltec.trabalhofinal.R;
 import br.ufmg.coltec.trabalhofinal.models.Contact;
 import br.ufmg.coltec.trabalhofinal.models.ContactDB;
@@ -21,6 +22,8 @@ public class CreateContactListActivity extends AppCompatActivity {
 
         // instanciando o banco de dados
         ContactDB contactDB = new ContactDB(this);
+        // Instanciando DAO
+        ContactDAO contactDAO = new ContactDAO(contactDB);
 
         EditText inputName = this.findViewById(R.id.input_name);
         EditText inputEmail = this.findViewById(R.id.input_email);
@@ -42,7 +45,7 @@ public class CreateContactListActivity extends AppCompatActivity {
             Contact contact = new Contact(name);
 
             //inserindo dados do modelo no banco de dados
-            contactDB.insertContact(contact);
+            contactDAO.insertContact(contact);
 
             Toast.makeText(CreateContactListActivity.this, "Contato cadastrado com sucesso", Toast.LENGTH_SHORT).show();
         });
