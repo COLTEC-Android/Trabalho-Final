@@ -20,8 +20,9 @@ public class Contact {
         return name;
     }
 
-    public void setName(String name) {
+    public Contact setName(String name) {
         this.name = name;
+        return null;
     }
 
     public String getPhone() {

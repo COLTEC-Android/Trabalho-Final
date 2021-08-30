@@ -30,5 +30,4 @@ public class ContactsListFragment extends ListFragment {
         this.contacts = contacts;
     }
 
-
 }
