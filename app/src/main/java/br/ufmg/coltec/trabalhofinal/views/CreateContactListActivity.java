@@ -39,7 +39,7 @@ public class CreateContactListActivity extends AppCompatActivity {
             String github = inputGitHub.getText().toString();
 
             // instanciando modelo de contato
-            Contact contact = new Contact(name, email);
+            Contact contact = new Contact(name);
 
             //inserindo dados do modelo no banco de dados
             contactDB.insertContact(contact);

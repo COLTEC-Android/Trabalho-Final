@@ -8,9 +8,9 @@ public class Contact {
     private String linkedin;
     private String github;
 
-    public Contact(String name, String email) {
+    public Contact(String name) {
         this.name = name;
-        this.email = email;
+        this.email = null;
         this.phone = null;
         this.github = null;
         this.linkedin = null;

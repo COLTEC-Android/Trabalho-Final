@@ -1,7 +1,34 @@
 package br.ufmg.coltec.trabalhofinal.views;
 
+import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 
-public class ContactListActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
 
+import br.ufmg.coltec.trabalhofinal.R;
+import br.ufmg.coltec.trabalhofinal.controllers.ContactsListFragment;
+import br.ufmg.coltec.trabalhofinal.models.Contact;
+import br.ufmg.coltec.trabalhofinal.models.ContactDB;
+
+public class ContactListActivity extends FragmentActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_contact_list);
+
+        ContactsListFragment contactsListFragment = new ContactsListFragment();
+        ContactDB contactDB = new ContactDB(this);
+
+        contactsListFragment.setContacts(contactDB.getAllContacts());
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        fragmentManager.beginTransaction()
+                .replace(R.id.frag_contacts_list, contactsListFragment)
+                .commit();
+
+    }
 }

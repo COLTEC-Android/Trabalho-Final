@@ -2,8 +2,12 @@ package br.ufmg.coltec.trabalhofinal.models;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ContactDB extends SQLiteOpenHelper {
 
@@ -13,7 +17,7 @@ public class ContactDB extends SQLiteOpenHelper {
     private static final String CONTACT_TABLE = "CREATE TABLE contact " +
             "(id INTEGER PRIMARY KEY AUTOINCREMENT," +
             "name VARCHAR(100)," +
-            "email VARCHAR(100)," +
+            "email VARCHAR(100) DEFAULT NULL," +
             "phone VARCHAR(12) DEFAULT NULL," +
             "linkedin VARCHAR(50) DEFAULT NULL," +
             "github VARCHAR(50) DEFAULT NULL)";
@@ -32,7 +36,8 @@ public class ContactDB extends SQLiteOpenHelper {
 
     }
 
-    public void insertContact(Contact contact){
+    // método que insere dados na tabela
+    public void insertContact(Contact contact) {
 
         SQLiteDatabase database = this.getWritableDatabase();
 
@@ -56,5 +61,43 @@ public class ContactDB extends SQLiteOpenHelper {
         } finally {
             database.close();
         }
+    }
+
+    // método que lê dados da tabela
+    public List<Contact> getAllContacts() {
+        // instanciando a lista
+        List<Contact> contacts = new ArrayList<>();
+
+        SQLiteDatabase database = this.getReadableDatabase();
+
+        // consulta ao banco de dados
+        try {
+
+            Cursor cursor = database.query
+                    (
+                            "contact",
+                            new String[]{"name"},
+                            null,
+                            null,
+                            null,
+                            null,
+                            null
+                    );
+            if (cursor.moveToFirst()) {
+                do {
+                    String name = cursor.getString(cursor.getColumnIndex("name"));
+
+                    Contact contact = new Contact(name);
+                    contacts.add(contact);
+                } while (cursor.moveToNext());
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            database.close();
+        }
+
+        return  contacts;
     }
 }
