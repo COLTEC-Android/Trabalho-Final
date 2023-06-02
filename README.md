@@ -63,15 +63,13 @@ Por fim, as classes desenvolvidas neste módulo de dados deverão estar, majorit
 
 Você deverá disponibilizar duas versões distintas para seu aplicativo: demo e completa. A versão demo deverá impedir o acesso a pelo menos um recurso presente no aplicativo.
 
-<!-- ## Integração com o trabalho de PDS
+## Integração com o trabalho de PDS
 
 Opcionalmente, você poderá intergrar esse trabalho com o trabalho final da disciplina de Princípios de Desenvolvimento de Software.
 Para que essa integração seja válida, você deverá:
 
 * Implementar testes unitários para verificar o funcionamento/comportamento das classes, métodos e funções auxiliares utilizadas para desenvolver o aplicativo
-<!-- * Implemente um [proxy](https://engsoftmoderna.info/cap6.html) para manter um cache dos itens da listagem, válido enquanto o aplicativo estiver aberto. -->
-<!-- * Implemente um [singleton](https://engsoftmoderna.info/cap6.html) que irá controlar a conexão com o serviço ou o banco de dados -->
-<!-- * Organize a arquitetura da sua aplicação utilizando o padrão de camadas: Uma camada de interface (Activities), uma camada de negócios (classes intermediárias), e uma camada de modelo (classes de modelo presentes no módulo externo) -->
+* Organize a arquitetura da sua aplicação utilizando o padrão de camadas: Uma camada de interface (Activities), uma camada de negócios (classes intermediárias), e uma camada de modelo (classes de modelo presentes no módulo externo)
 
 ## Entrega & Apresentação
 
