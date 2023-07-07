@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    style="@style/background"
+    tools:context=".Activities.AboutActivity">
+
+    <RelativeLayout
+        style="@style/toolbar"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <ImageButton
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/btn_back"
+            style="@style/back_icon"/>
+
+        <ImageView
+            style="@style/lucas_image"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_marginVertical="50dp"
+        android:layout_marginHorizontal="30dp"
+        android:padding="20dp"
+        style="@style/modal_card"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="550dp">
+
+        <TextView
+            android:id="@+id/name_details"
+            android:text="Rangoo App"
+            android:textSize="30dp"
+            style="@style/text_fix"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/image_details"
+            android:src="@drawable/rangoo_dark"
+            android:background="@drawable/border_image"
+            android:layout_gravity="center"
+            android:layout_marginVertical="20dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"/>
+
+        <TextView
+            android:id="@+id/description_details"
+            style="@style/text_fix"
+            android:textSize="15dp"
+            android:textAlignment="inherit"
+            android:justificationMode="inter_word"
+            android:text="Produzido por \nGabriella Aguiar\nJeferson Constantino\nWallace Oliveira\n\n\n\n                       Belo Horizonte, 2023"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+
+</LinearLayout>
